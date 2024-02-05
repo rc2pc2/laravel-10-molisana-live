@@ -7,11 +7,15 @@
         <nav class="navbar-nav navbar-light container-fluid">
             <ul class="d-flex list-style-none justify-content-center mb-0">
                 <li class="p-3">
-                    <a href="#">Home</a>
+                    <a href="{{ route('pages.home') }}">
+                        Home
+                    </a>
                 </li>
 
                 <li class="p-3 active">
-                    <a href="#">Prodotti</a>
+                    <a href="{{ route('guest.pastas.index') }}">
+                        Prodotti
+                    </a>
                 </li>
 
                 <li class="p-3">
