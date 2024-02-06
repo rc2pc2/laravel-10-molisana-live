@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\PastaController as AdminPastaController;
 use App\Http\Controllers\Guest\PastaController as GuestPastaController;
+use App\Http\Controllers\Guest\MillController as GuestMillController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('pages.home');})->name('pages.home');
 Route::get('admin/pastas', [AdminPastaController::class, 'index'])->name('admin.pastas.index');
+
 //
 // Route::resource('pastas', GuestPastaController::class);
 
 Route::get('/pastas', [GuestPastaController::class, 'index'])->name('guest.pastas.index');
 Route::get('/pastas/{pasta}', [GuestPastaController::class, 'show'])->name('guest.pastas.show');
+
+
+Route::get('/mills', [GuestMillController::class, 'index'])->name('guest.mills.index');
+Route::get('/mills/{mill}', [GuestMillController::class, 'show'])->name('guest.mills.show');

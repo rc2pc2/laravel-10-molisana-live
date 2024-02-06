@@ -3,27 +3,27 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pasta;
+use App\Models\Mill;
 use Illuminate\Http\Request;
 
-class PastaController extends Controller
+class MillController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $pastas = Pasta::all();
-        return view('guest.pastas.index', compact('pastas'));
+        $mills = Mill::all();
+        return view('guest.mills.index', compact('mills'));
     }
 
-    /**
+        /**
      * Display the specified resource.
      */
-    public function show(Pasta $pasta)
+    public function show(string $id)
     {
-        // dd($pasta);
-        return view('guest.pastas.show', compact('pasta'));
+        $mill = Mill::findOrFail($id);
+        return view('guest.mills.show', compact('mill'));
     }
 
 
@@ -42,7 +42,6 @@ class PastaController extends Controller
     {
         //
     }
-
 
 
     /**
