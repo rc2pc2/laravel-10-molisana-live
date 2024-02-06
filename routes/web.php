@@ -24,6 +24,8 @@ Route::get('admin/pastas', [AdminPastaController::class, 'index'])->name('admin.
 // Route::resource('pastas', GuestPastaController::class);
 
 Route::get('/pastas', [GuestPastaController::class, 'index'])->name('guest.pastas.index');
+Route::post('/pastas', [GuestPastaController::class, 'store'])->name('guest.pastas.store');
+Route::get('/pastas/create', [GuestPastaController::class, 'create'])->name('guest.pastas.create');
 Route::get('/pastas/{pasta}', [GuestPastaController::class, 'show'])->name('guest.pastas.show');
 
 

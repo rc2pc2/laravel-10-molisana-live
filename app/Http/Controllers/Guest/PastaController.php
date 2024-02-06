@@ -32,7 +32,7 @@ class PastaController extends Controller
      */
     public function create()
     {
-        //
+        return view('guest.pastas.create');
     }
 
     /**
@@ -40,7 +40,20 @@ class PastaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formData = $request->all();
+        // ? ['titolo'] => 'Spaghetto alla chitarra'
+        // ? ['cottura'] => '10 minuti'
+
+        $newPasta = new Pasta();
+        $newPasta->titolo = $formData['titolo'];
+        $newPasta->tipo = $formData['tipo'];
+        $newPasta->cottura = $formData['cottura'];
+        $newPasta->peso = $formData['peso'];
+        $newPasta->src = $formData['src'];
+        $newPasta->descrizione = $formData['descrizione'];
+        $newPasta->save();
+
+        return redirect()->route('guest.pastas.show', $newPasta->id);
     }
 
 
