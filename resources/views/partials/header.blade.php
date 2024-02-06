@@ -22,6 +22,18 @@
                         Mulini
                     </a>
                 </li>
+
+                <li class="p-3 {{ ( Route::currentRouteName() == 'guest.pastas.create') ? 'active' : '' }}">
+                    <a href="{{ route('guest.pastas.create') }}">
+                        Nuova pasta
+                    </a>
+                </li>
+
+                <li class="p-3 {{ ( Route::currentRouteName() == 'guest.mills.create') ? 'active' : '' }}">
+                    <a href="{{ route('guest.mills.create') }}">
+                        Nuovo mulino
+                    </a>
+                </li>
             </ul>
         </nav>
     </section>
