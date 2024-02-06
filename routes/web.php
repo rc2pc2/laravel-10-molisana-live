@@ -28,6 +28,7 @@ Route::post('/pastas', [GuestPastaController::class, 'store'])->name('guest.past
 Route::get('/pastas/create', [GuestPastaController::class, 'create'])->name('guest.pastas.create');
 Route::get('/pastas/{pasta}', [GuestPastaController::class, 'show'])->name('guest.pastas.show');
 
-
 Route::get('/mills', [GuestMillController::class, 'index'])->name('guest.mills.index');
+Route::post('/mills', [GuestMillController::class, 'store'])->name('guest.mills.store');
+Route::get('/mills/create', [GuestMillController::class, 'create'])->name('guest.mills.create');
 Route::get('/mills/{mill}', [GuestMillController::class, 'show'])->name('guest.mills.show');
