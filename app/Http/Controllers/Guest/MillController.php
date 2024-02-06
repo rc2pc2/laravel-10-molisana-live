@@ -41,18 +41,21 @@ class MillController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['watermill'] = isset($data['watermill']) ;
+        $data['watermill'] = isset($data['watermill']);
 
-        $newMill = new Mill();
-        $newMill->name = $data['name'];
-        $newMill->watermill = $data['watermill'];
-        $newMill->region = $data['region'];
-        $newMill->country = $data['country'];
-        $newMill->size = $data['size'];
-        $newMill->mills_no = $data['mills_no'];
-        $newMill->picture = $data['picture'];
+        // ? Metodo a manina
+        // $newMill = new Mill();
+        // $newMill->name = $data['name'];
+        // $newMill->watermill = $data['watermill'];
+        // $newMill->region = $data['region'];
+        // $newMill->country = $data['country'];
+        // $newMill->size = $data['size'];
+        // $newMill->mills_no = $data['mills_no'];
+        // $newMill->picture = $data['picture'];
+        // $newMill->save();
 
-        $newMill->save();
+        $newMill = Mill::create($data);
+
 
         return redirect()->route('guest.mills.show', $newMill->id);
     }
