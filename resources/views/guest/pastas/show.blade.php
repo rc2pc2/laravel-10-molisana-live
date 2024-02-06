@@ -8,27 +8,27 @@
                     <div class="col-7 p-3">
                         <div class="card p-4 text-center">
                             <h1>
-                                {{ $pasta['titolo'] }}
+                                {{ $pasta->titolo }}
                             </h1>
                             <p>
-                                Tipo: {{ $pasta['tipo'] }}
+                                Tipo: {{ $pasta->tipo }}
                             </p>
                             <p>
-                                Cottura: {{ $pasta['cottura'] }}
+                                Cottura: {{ $pasta->cottura }}
                             </p>
                             <p>
-                                Cottura: {{ $pasta['peso'] }}
+                                Cottura: {{ $pasta->peso }}
                             </p>
 
                             <div class="card-image">
-                                <img class="w-50" src="{{  $pasta['src'] }}" alt="{{ $pasta['titolo'] }} ">
+                                <img class="w-50" src="{{  $pasta->src }}" alt="{{ $pasta->titolo }} ">
                             </div>
                             <div class="card-body">
                                 <h2>
                                     Descrizione
                                 </h2>
                                 <p>
-                                    {{ $pasta['descrizione'] }}
+                                    {{ $pasta->descrizione }}
                                 </p>
                             </div>
                         </div>
