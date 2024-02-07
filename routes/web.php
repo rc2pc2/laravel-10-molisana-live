@@ -32,12 +32,12 @@ Route::put('/pastas/{pasta}', [GuestPastaController::class, 'update'])->name('gu
 Route::get('/pastas/{pasta}/edit', [GuestPastaController::class, 'edit'])->name('guest.pastas.edit');
 
 
-
-
 Route::get('/mills', [GuestMillController::class, 'index'])->name('guest.mills.index');
 Route::post('/mills', [GuestMillController::class, 'store'])->name('guest.mills.store');
 Route::get('/mills/create', [GuestMillController::class, 'create'])->name('guest.mills.create');
 Route::get('/mills/{mill}', [GuestMillController::class, 'show'])->name('guest.mills.show');
+Route::get('/mills/{mill}/edit', [GuestMillController::class, 'edit'])->name('guest.mills.edit');
+Route::put('/mills/{mill}', [GuestMillController::class, 'update'])->name('guest.mills.update');
 
 
 Route::get('/recipes', [GuestRecipeController::class, 'index'])->name('guest.recipes.index');

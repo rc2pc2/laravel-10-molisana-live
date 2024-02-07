@@ -64,17 +64,21 @@ class MillController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Mill $mill)
     {
-        //
+        return view('guest.mills.edit', compact('mill'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Mill $mill)
     {
-        //
+        $data = $request->all();
+        $data['watermill'] = isset($data['watermill']);
+
+        $mill->update($data);
+        return redirect()->route('guest.mills.show', $mill->id);
     }
 
     /**
