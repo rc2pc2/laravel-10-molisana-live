@@ -43,7 +43,7 @@
                         <input type="text" name="mills_no" id="mills_no" class="form-control">
                     </div>
 
-                    <div class="mb-3
+                    <div class="mb-3">
                         <label for="picture" class="form-label">URL immagine</label>
                         <input type="text" name="picture" id="picture" class="form-control">
                     </div>
