@@ -13,7 +13,7 @@ class MillController extends Controller
      */
     public function index()
     {
-        $mills = Mill::all();
+        $mills = Mill::orderBy('id', 'DESC')->get();
         return view('guest.mills.index', compact('mills'));
     }
 

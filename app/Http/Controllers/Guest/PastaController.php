@@ -13,7 +13,7 @@ class PastaController extends Controller
      */
     public function index()
     {
-        $pastas = Pasta::all();
+        $pastas = Pasta::orderBy('id', 'DESC')->get();
         return view('guest.pastas.index', compact('pastas'));
     }
 
