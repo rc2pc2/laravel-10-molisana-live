@@ -28,6 +28,11 @@ Route::get('/pastas', [GuestPastaController::class, 'index'])->name('guest.pasta
 Route::post('/pastas', [GuestPastaController::class, 'store'])->name('guest.pastas.store');
 Route::get('/pastas/create', [GuestPastaController::class, 'create'])->name('guest.pastas.create');
 Route::get('/pastas/{pasta}', [GuestPastaController::class, 'show'])->name('guest.pastas.show');
+Route::put('/pastas/{pasta}', [GuestPastaController::class, 'update'])->name('guest.pastas.update');
+Route::get('/pastas/{pasta}/edit', [GuestPastaController::class, 'edit'])->name('guest.pastas.edit');
+
+
+
 
 Route::get('/mills', [GuestMillController::class, 'index'])->name('guest.mills.index');
 Route::post('/mills', [GuestMillController::class, 'store'])->name('guest.mills.store');
