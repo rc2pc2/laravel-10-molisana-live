@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\PastaController as AdminPastaController;
 use App\Http\Controllers\Guest\PastaController as GuestPastaController;
 use App\Http\Controllers\Guest\MillController as GuestMillController;
+use App\Http\Controllers\Guest\RecipeController as GuestRecipeController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,9 @@ Route::get('/mills', [GuestMillController::class, 'index'])->name('guest.mills.i
 Route::post('/mills', [GuestMillController::class, 'store'])->name('guest.mills.store');
 Route::get('/mills/create', [GuestMillController::class, 'create'])->name('guest.mills.create');
 Route::get('/mills/{mill}', [GuestMillController::class, 'show'])->name('guest.mills.show');
+
+
+Route::get('/recipes', [GuestRecipeController::class, 'index'])->name('guest.recipes.index');
+Route::post('/recipes', [GuestRecipeController::class, 'store'])->name('guest.recipes.store');
+Route::get('/recipes/create', [GuestRecipeController::class, 'create'])->name('guest.recipes.create');
+Route::get('/recipes/{recipe}', [GuestRecipeController::class, 'show'])->name('guest.recipes.show');

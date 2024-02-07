@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MillSeeder::class,
             PastaSeeder::class,
+            RecipeSeeder::class,
         ]);
     }
 }

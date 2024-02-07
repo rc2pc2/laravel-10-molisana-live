@@ -23,6 +23,12 @@
                     </a>
                 </li>
 
+                <li class="p-3 {{ ( Route::currentRouteName() == 'guest.recipes.index') ? 'active' : '' }}">
+                    <a href="{{ route('guest.recipes.index') }}">
+                        Ricette
+                    </a>
+                </li>
+
                 <li class="p-3 {{ ( Route::currentRouteName() == 'guest.pastas.create') ? 'active' : '' }}">
                     <a href="{{ route('guest.pastas.create') }}">
                         Nuova pasta
@@ -32,6 +38,12 @@
                 <li class="p-3 {{ ( Route::currentRouteName() == 'guest.mills.create') ? 'active' : '' }}">
                     <a href="{{ route('guest.mills.create') }}">
                         Nuovo mulino
+                    </a>
+                </li>
+
+                <li class="p-3 {{ ( Route::currentRouteName() == 'guest.recipes.create') ? 'active' : '' }}">
+                    <a href="{{ route('guest.recipes.create') }}">
+                        Nuova ricetta
                     </a>
                 </li>
             </ul>
