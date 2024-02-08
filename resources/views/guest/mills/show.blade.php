@@ -27,6 +27,13 @@
                             <div class="card-image">
                                 <img class="w-50" src="{{  $mill->picture }}" alt="{{ $mill->name }}'s picture">
                             </div>
+                            <div class="actions mb-3 pt-3">
+                                <a href="{{ route('guest.mills.edit', $mill->id) }}">
+                                    <button class="btn btn-primary">
+                                        Modifica questo mulino
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -10,13 +10,6 @@
                             <h1>
                                 {{ $pasta->titolo }}
                             </h1>
-                            <div class="actions mb-3 pt-3">
-                                <a href="{{ route('guest.pastas.edit', $pasta->id) }}">
-                                    <button class="btn btn-primary">
-                                        Modifica questo tipo di pasta
-                                    </button>
-                                </a>
-                            </div>
                             <p>
                                 Tipo: {{ $pasta->tipo }}
                             </p>
@@ -37,6 +30,14 @@
                                 <p>
                                     {{ $pasta->descrizione }}
                                 </p>
+                            </div>
+
+                            <div class="actions mb-3 pt-3">
+                                <a href="{{ route('guest.pastas.edit', $pasta->id) }}">
+                                    <button class="btn btn-primary">
+                                        Modifica questo tipo di pasta
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
