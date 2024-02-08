@@ -26,6 +26,14 @@
                             <p>
                                 Descrizione: {{ $recipe->description }}
                             </p>
+
+                            <div class="actions mb-3 pt-3">
+                                <a href="{{ route('guest.recipes.edit', $recipe->id) }}">
+                                    <button class="btn btn-primary">
+                                        Modifica questa ricetta
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
