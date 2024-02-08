@@ -26,26 +26,42 @@
                                     <button class="btn btn-sm btn-primary d-inline-block">
                                     mostra
                                     </button>
-                                    <button class="btn btn-sm btn-warning">
+                                    <button class="btn btn-sm btn-success">
                                         modifica
                                     </button>
-                                    <button class="btn btn-sm btn-danger">
-                                        elimina
+                                    <form class="d-inline-block pasta-eraser"  action="{{ route('admin.pastas.destroy', $pasta->id) }}" method="POST" data-pasta-name="{{ $pasta['titolo'] }}">
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button class="btn btn-sm btn-warning" >
+                                            elimina
                                         </button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
-
-
-
-
-
-
                 </div>
             </div>
         </div>
     </section>
+@endsection
+
+
+@section('script-content')
+    <script>
+        const formsList = document.querySelectorAll('form.pasta-eraser');
+
+        formsList.forEach( form => {
+            form.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const name = this.getAttribute('data-pasta-name');
+                const confirmWindow = window.confirm(`Vuoi tu eliminare definitivamente ${name}?`);
+                if (confirmWindow) this.submit();
+            });
+        })
+    </script>
 @endsection

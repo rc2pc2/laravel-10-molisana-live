@@ -121,8 +121,19 @@ class PastaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Pasta $pasta)
     {
-        //
+        $pasta->delete();
+
+        return redirect()->route('guest.pastas.index');
+    }
+
+    /**
+     * Shows the list of soft deleted resources.
+     *
+     */
+    public function deletedPastas(){
+        $pastas = Pasta::onlyTrashed()->orderBy('id', 'DESC')->get();
+        return view('guest.pastas.deleted', compact('pastas'));
     }
 }

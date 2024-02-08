@@ -39,10 +39,36 @@
                                     </button>
                                 </a>
                             </div>
+
+                            <form class="d-inline-block pasta-eraser"  action="{{ route('guest.pastas.destroy', $pasta) }}" method="POST" data-pasta-name="{{ $pasta['titolo'] }}">
+                                @csrf
+                                @method('DELETE')
+
+                                <button class="btn btn-sm btn-warning" >
+                                    elimina
+                                </button>
+                            </form>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+@endsection
+
+
+
+
+@section('script-content')
+    <script>
+        const form = document.querySelector('form.pasta-eraser');
+        form.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const name = this.getAttribute('data-pasta-name');
+            const confirmWindow = window.confirm(`Vuoi tu eliminare definitivamente ${name}?`);
+            if (confirmWindow) this.submit();
+        });
+    </script>
 @endsection

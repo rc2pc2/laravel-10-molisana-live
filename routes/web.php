@@ -19,7 +19,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () { return view('pages.home');})->name('pages.home');
-Route::get('admin/pastas', [AdminPastaController::class, 'index'])->name('admin.pastas.index');
+
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::get('pastas', [AdminPastaController::class, 'index'])->name('pastas.index');
+    Route::delete('pastas/{pasta}', [AdminPastaController::class, 'destroy'])->name('pastas.destroy');
+});
+
+Route::name('guest.')->group(function(){
+    Route::get('/pastas/deleted', [GuestPastaController::class, 'deletedPastas'])->name('pastas.deleted');
+    Route::resource('pastas', GuestPastaController::class);
+    Route::resource('mills', GuestMillController::class);
+    Route::resource('recipes', GuestRecipeController::class);
+});
+
 
 // Route::get('/pastas', [GuestPastaController::class, 'index'])->name('guest.pastas.index');
 // Route::post('/pastas', [GuestPastaController::class, 'store'])->name('guest.pastas.store');
@@ -42,10 +54,3 @@ Route::get('admin/pastas', [AdminPastaController::class, 'index'])->name('admin.
 // Route::get('/recipes/{recipe}/edit', [GuestRecipeController::class, 'edit'])->name('guest.recipes.edit');
 // Route::put('/recipes/{recipe}', [GuestRecipeController::class, 'update'])->name('guest.recipes.update');
 
-
-Route::name('guest.')->group(function(){
-    Route::resource('pastas', GuestPastaController::class);
-    // Route::get('/pastas/specials', [GuestPastaController::class, 'specialsIndex'])->name('pastas.specials');
-    Route::resource('mills', GuestMillController::class);
-    Route::resource('recipes', GuestRecipeController::class);
-});
