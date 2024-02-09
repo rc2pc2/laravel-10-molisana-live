@@ -33,7 +33,8 @@ class PastaController extends Controller
      */
     public function create()
     {
-        return view('guest.pastas.create');
+        $pasta = new Pasta();
+        return view('guest.pastas.create', compact('pasta') );
     }
 
     /**
@@ -66,8 +67,6 @@ class PastaController extends Controller
         // $newPasta->src = $formData['src'];
         // $newPasta->descrizione = $formData['descrizione'];
         // $newPasta->save();
-
-
 
         $newPasta = Pasta::create($formData);
 
