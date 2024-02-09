@@ -11,6 +11,9 @@
 </head>
 <body>
     <main>
+        <h1>
+            New admin
+        </h1>
         @yield('main-content')
     </main>
     @yield('script-content')
